@@ -25,7 +25,7 @@ export default function Signup() {
             />
           </div>
           
-          <button className="w-full bg-[#0052F3] text-white p-3  mt-6 hover:bg-blue-700 transition">
+          <button className="w-full bg-[#0052F3] text-white p-3  mt-6 hover:bg-blue-800 transition">
             Create Account
           </button>
           
