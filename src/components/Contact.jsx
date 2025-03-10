@@ -1,9 +1,13 @@
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import Header from "./Header";
+import Footer from "./Footer";
 
 export default function Contact() {
     return (
-      <div className="flex flex-col md:flex-row justify-center items-start gap-8 p-8">
+      <>
+      <Header />
+      <div className="flex flex-col md:flex-row justify-center items-start gap-8 p-8 py-[8%]">
         {/* Contact Information */}
         <div className="md:p-6 w-full md:w-1/3 xl:w-1/5">
           <div className="mb-6">
@@ -43,6 +47,8 @@ export default function Contact() {
           </div>
         </div>
       </div>
+      <Footer />
+      </>
     );
   }
   

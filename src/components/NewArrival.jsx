@@ -33,7 +33,7 @@ const NewArrival = () => {
         {/* <h3 className="text-blue-600 font-medium flex items-center">
           <span className="w-2 h-6 bg-blue-600 mr-2"></span> Featured
         </h3> */}
-        <h1 className="text-3xl font-bold mt-1">New Arrival</h1>
+        <h1 className="text-xl sm:text-3xl md:text-4xl font-semibold mt-4  md:text-left">New Arrival</h1>
       </div>
 
       {/* Grid Layout */}

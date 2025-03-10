@@ -1,6 +1,8 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { HiOutlineEye } from "react-icons/hi";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const products = [
   {
@@ -145,8 +147,10 @@ const products = [
 
 const AllProducts = () => {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-10">
-        <div  className="mb-10">
+    <>
+    <Header />
+      <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="mb-10">
           {/* Category Title */}
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg flex items-center gap-2">
@@ -198,9 +202,9 @@ const AllProducts = () => {
                 {/* <p className="text-blue-600 font-semibold ">{product.price}</p>
                   {product.oldPrice && (
                     <p className="text-gray-400 line-through text-sm">
-                      {product.oldPrice}
+                    {product.oldPrice}
                     </p>
-                  )} */}
+                    )} */}
                 <div className="flex items-center space-x-2">
                   <p className="text-blue-600 font-semibold">{product.price}</p>
                   {product.oldPrice && (
@@ -216,8 +220,9 @@ const AllProducts = () => {
             ))}
           </div>
         </div>
-      
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 };
 

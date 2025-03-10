@@ -8,14 +8,14 @@ import { IoIosSend } from "react-icons/io";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-10">
+    <footer className="bg-black text-white py-[4%]">
       <div className="container mx-auto px-4 md:px-8 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-6 text-center md:text-left">
           {/* Exclusive Section */}
           <div className="md:col-span-1">
-            <h2 className="text-xl font-semibold">Exclusive</h2>
-            <p className="mt-2 font-medium md:text-sm">Subscribe</p>
-            <p className="text-sm mt-3 md:text-sm">Get 10% off your first order</p>
+            <h2 className="lg:text-2xl text-xl font-semibold">Exclusive</h2>
+            <p className="mt-2 font-medium md:text-sm lg:text-lg">Subscribe</p>
+            <p className="text-sm mt-3 md:text-sm lg:text-lg">Get 10% off your first order</p>
             <div className="relative mt-4 max-w-sm w-full xl:w-50">
               <input
                 type="email"
@@ -30,16 +30,16 @@ export default function Footer() {
 
           {/* Support Section */}
           <div className="md:col-span-1">
-            <h2 className="text-xl font-semibold">Support</h2>
-            <p className="mt-3 md:text-sm ">Surat, Gujarat</p>
-            <p className="mt-3 md:text-sm">buyspeart@gmail.com</p>
-            <p className="mt-3 md:text-sm">+91 99091 93962</p>
+            <h2 className="lg:text-2xl text-xl font-semibold">Support</h2>
+            <p className="mt-3 lg:text-lg md:text-sm ">Surat, Gujarat</p>
+            <p className="mt-3 lg:text-lg md:text-sm">buyspeart@gmail.com</p>
+            <p className="mt-3 lg:text-lg md:text-sm">+91 99091 93962</p>
           </div>
 
           {/* Account Section */}
           <div className="md:col-span-1">
-            <h2 className="text-xl font-semibold">Account</h2>
-            <ul className="mt-3 space-y-1 md:text-sm">
+            <h2 className="lg:text-2xl text-xl font-semibold">Account</h2>
+            <ul className="mt-3 space-y-1 md:text-sm lg:text-lg">
               <li>
                 <a href="#">My Account</a>
               </li>
@@ -60,8 +60,8 @@ export default function Footer() {
 
           {/* Quick Links Section */}
           <div className="md:col-span-1">
-            <h2 className="text-xl font-semibold">Quick Link</h2>
-            <ul className="mt-3 space-y-1 md:text-sm ">
+            <h2 className="lg:text-2xl text-xl font-semibold">Quick Link</h2>
+            <ul className="mt-3 space-y-1 md:text-sm lg:text-lg">
               <li className="mt-2 ">
                 <a href="#">Privacy Policy</a>
               </li>
@@ -76,19 +76,19 @@ export default function Footer() {
 
           {/* Social Media Section */}
           <div className="md:col-span-1">
-            <h2 className="text-xl font-semibold">Follow us on</h2>
-            <div className="flex justify-center md:justify-start space-x-4 mt-3">
+            <h2 className="lg:text-2xl text-xl font-semibold">Follow us on</h2>
+            <div className="flex justify-center md:justify-start space-x-4 mt-4 ">
               <a href="#">
-                <FaFacebookF size={18} />
+                <FaFacebookF size={25} />
               </a>
               <a href="#">
-                <FaTwitter size={18} />
+                <FaTwitter size={25} />
               </a>
               <a href="#">
-                <FaInstagram size={18} />
+                <FaInstagram size={25} />
               </a>
               <a href="#">
-                <FaLinkedinIn size={18} />
+                <FaLinkedinIn size={25} />
               </a>
             </div>
           </div>

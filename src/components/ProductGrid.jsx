@@ -42,15 +42,15 @@ const products = [
 
 const ProductGrid = () => {
   return (
-    <div className="max-w-7xl mx-auto p-6 relative">
+    <div className="max-w-7xl mx-auto p-6 relative mt-8">
       {/* Title */}
       <div className="flex items-center justify-between mb-6">
         <div>
           <div className="flex items-center gap-2">
-            <span className="bg-blue-600 h-8 w-4 rounded-sm"></span>
-            <span className="text-blue-600 font-semibold">Our Products</span>
+            <span className="bg-blue-600 h-8 w-4 rounded-sm "></span>
+            <span className="text-blue-600 font-semibold text-lg">Our Products</span>
           </div>
-          <h1 className="text-3xl font-bold">Explore Our Products</h1>
+          <h1 className="text-xl sm:text-3xl md:text-4xl font-semibold mt-4  md:text-left">Explore Our Products</h1>
         </div>
         {/* Navigation Arrows */}
         <div className="flex space-x-2">

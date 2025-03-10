@@ -1,6 +1,9 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { HiOutlineEye } from "react-icons/hi";
+import Header from "./Header";
+import Footer from "./Footer";
+import { useNavigate } from "react-router-dom";
 
 const products = [
   {
@@ -56,80 +59,91 @@ const categories = [
 ];
 
 const ProductSection = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="max-w-7xl mx-auto px-6 py-10">
-      {categories.map((category, index) => (
-        <div key={index} className="mb-10">
-          {/* Category Title */}
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-lg flex items-center gap-2">
-              <span className="bg-blue-600 h-8 w-4 rounded-sm "></span>
-              {category.title}
-            </h2>
-            <button className="border px-8 py-3 text-sm font-medium rounded-sm border-gray-400">
-              See All
-            </button>
-          </div>
+    <>
+      <Header />
+      <div className="max-w-7xl mx-auto px-6 py-10">
+        {categories.map((category, index) => (
+          <div key={index} className="mb-10">
+            {/* Category Title */}
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg flex items-center gap-2">
+                <span className="bg-blue-600 h-8 w-4 rounded-sm "></span>
+                {category.title}
+              </h2>
+              <button
+                className="border px-8 py-3 text-sm font-medium rounded-sm border-gray-400 "
+                onClick={() => navigate("/all-products")}
+              >
+                See All
+              </button>
+            </div>
 
-          {/* Product Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-6">
-            {products.map((product) => (
-              <div key={product.id} className="relative  overflow-hidden p-4">
-                {/* Discount & New Tags */}
-                {product.discount && (
-                  <span className="absolute top-4 left-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
-                    {product.discount}
-                  </span>
-                )}
-                {product.isNew && (
-                  <span className="absolute top-4 left-3 bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded">
-                    NEW
-                  </span>
-                )}
-                <div className=" bg-gray-100 ">
-                  {/* Product Image */}
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-50 object-contain  "
-                  />
+            {/* Product Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-6">
+              {products.map((product) => (
+                <div key={product.id} className="relative  overflow-hidden p-4">
+                  {/* Discount & New Tags */}
+                  {product.discount && (
+                    <span className="absolute top-4 left-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+                      {product.discount}
+                    </span>
+                  )}
+                  {product.isNew && (
+                    <span className="absolute top-4 left-3 bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded">
+                      NEW
+                    </span>
+                  )}
+                  <div className=" bg-gray-100 ">
+                    {/* Product Image */}
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-50 object-contain  "
+                    />
 
-                  {/* Eye Icon */}
-                  <div className="absolute top-6 right-6 bg-white p-2 rounded-full cursor-pointer">
-                    <HiOutlineEye className="text-gray-600" />
+                    {/* Eye Icon */}
+                    <div className="absolute top-6 right-6 bg-white p-2 rounded-full cursor-pointer">
+                      <HiOutlineEye className="text-gray-600" />
+                    </div>
+
+                    {/* Add to Cart Button */}
+                    <button className="flex items-center justify-center bg-black text-white w-full py-2 mt-2">
+                      <FaShoppingCart className="mr-2" />
+                      Add To Cart
+                    </button>
                   </div>
-
-                  {/* Add to Cart Button */}
-                  <button className="flex items-center justify-center bg-black text-white w-full py-2 mt-2">
-                    <FaShoppingCart className="mr-2" />
-                    Add To Cart
-                  </button>
-                </div>
-                {/* Product Info */}
-                <h3 className="text-sm font-medium mt-2">{product.name}</h3>
-                {/* <p className="text-blue-600 font-semibold ">{product.price}</p>
+                  {/* Product Info */}
+                  <h3 className="text-sm font-medium mt-2">{product.name}</h3>
+                  {/* <p className="text-blue-600 font-semibold ">{product.price}</p>
                   {product.oldPrice && (
                     <p className="text-gray-400 line-through text-sm">
                       {product.oldPrice}
                     </p>
                   )} */}
-                <div className="flex items-center space-x-2">
-                  <p className="text-blue-600 font-semibold">{product.price}</p>
-                  {product.oldPrice && (
-                    <p className="text-gray-400 line-through text-sm">
-                      {product.oldPrice}
+                  <div className="flex items-center space-x-2">
+                    <p className="text-blue-600 font-semibold">
+                      {product.price}
                     </p>
-                  )}
+                    {product.oldPrice && (
+                      <p className="text-gray-400 line-through text-sm">
+                        {product.oldPrice}
+                      </p>
+                    )}
+                  </div>
+                  <div className="flex items-center text-yellow-500 text-sm">
+                    ★★★★★ ({product.reviews})
+                  </div>
                 </div>
-                <div className="flex items-center text-yellow-500 text-sm">
-                  ★★★★★ ({product.reviews})
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+      <Footer />
+    </>
   );
 };
 

@@ -24,7 +24,7 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-10">
+    <div className="max-w-7xl mx-auto px-6 py-10 mt-7 mb-[6%]">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
         {features.map((feature) => (
           <div key={feature.id} className="flex flex-col items-center">

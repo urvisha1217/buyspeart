@@ -48,11 +48,11 @@ const ProductCard = ({ price, oldPrice, rating }) => (
 const BestSellingProducts = () => {
   return (
     <>
-      <div className="p-6 max-w-6xl mx-auto">
+      <div className="p-6 max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
           <div className="flex items-center gap-2">
             <span className="bg-blue-600 h-8 w-4 rounded-sm"></span>
-            <span className="text-blue-600 font-semibold">This Month</span>
+            <span className="text-blue-600 font-semibold text-lg">This Month</span>
           </div>
         </div>
         <div className="flex flex-cols  lg:gap-[54%] xl:gap-[59%] md:gap-[37%]  gap-[6%]">
@@ -63,7 +63,7 @@ const BestSellingProducts = () => {
           View All
         </button> */}
           <div className="flex items-center ">
-            <button className="bg-blue-600 text-white md:px-6 md:py-3 px-2 py-2  rounded-md mt-0 hover:bg-blue-700 text-sm mt-4">
+            <button className="bg-blue-600 text-white md:px-12 md:py-3 px-2 py-2  rounded-md  hover:bg-blue-700 text-md mt-4">
               View All
             </button>
           </div>
@@ -74,7 +74,7 @@ const BestSellingProducts = () => {
           ))}
         </div>
       </div>
-      <div className="bg-black text-white p-6 md:p-12  max-w-5xl mx-auto mt-8">
+      <div className="bg-black text-white p-6 md:p-12  max-w-[78rem] mx-auto mt-12">
         <div className="flex flex-col md:flex-row items-center md:items-start">
           {/* Left Content */}
           <div className="md:w-1/2 text-center md:text-left">

@@ -1,8 +1,13 @@
+import Footer from "./Footer";
+import Header from "./Header";
+
 export default function SignIn() {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-white px-4">
+      <>
+      <Header />
+      <div className="flex items-center justify-center h-full py-[5%] bg-white px-4">
         <div className="w-full max-w-sm">
-          <h2 className="text-3xl font-semibold  mb-4">Log in to Exclusive</h2>
+          <h2 className="text-4xl font-semibold  mb-5">Log in to Exclusive</h2>
           <p className="mb-6">Enter your details below</p>
           
           <div className="space-y-4">
@@ -30,6 +35,8 @@ export default function SignIn() {
           </p>
         </div>
       </div>
+      <Footer />
+      </>
     );
   }
   
