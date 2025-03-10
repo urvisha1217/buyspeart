@@ -105,12 +105,20 @@ const ProductSection = () => {
                     />
 
                     {/* Eye Icon */}
-                    <div className="absolute top-6 right-6 bg-white p-2 rounded-full cursor-pointer">
+                    {/* <div className="absolute top-6 right-6 bg-white p-2 rounded-full cursor-pointer">
                       <HiOutlineEye className="text-gray-600" />
-                    </div>
+                    </div> */}
+                    <button onClick={() => navigate("/Single-product")}>
+                      <div className="absolute top-6 right-6 bg-white p-2 rounded-full cursor-pointer">
+                        <HiOutlineEye className="text-gray-600" />
+                      </div>
+                    </button>
 
                     {/* Add to Cart Button */}
-                    <button className="flex items-center justify-center bg-black text-white w-full py-2 mt-2">
+                    <button
+                      className="flex items-center justify-center bg-black text-white w-full py-2 mt-2 "
+                      onClick={() => navigate("/cart")}
+                    >
                       <FaShoppingCart className="mr-2" />
                       Add To Cart
                     </button>

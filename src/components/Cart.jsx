@@ -2,8 +2,11 @@ import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import Header from "./Header";
 import Footer from "./Footer";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
+  const navigate = useNavigate();
+
   const [cartItems, setCartItems] = useState([
     { id: 1, name: "Organizer for Mackup", price: 6500, quantity: 1 },
     { id: 2, name: "Organizer for Mackup", price: 6500, quantity: 2 },
@@ -130,7 +133,8 @@ export default function Cart() {
               <div className="flex justify-between font-bold text-base sm:text-lg">
                 <span>Total:</span> <span>₹{subtotal}</span>
               </div>
-              <button className="bg-blue-600 text-white w-full mt-4 py-3 rounded-md">
+              <button className="bg-blue-600 text-white w-full mt-4 py-3 rounded-md"
+              onClick={() => navigate("/checkout")}>
                 Proceed to checkout
               </button>
             </div>

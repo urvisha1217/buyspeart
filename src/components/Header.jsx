@@ -8,10 +8,12 @@ import { MdOutlineCancel } from "react-icons/md";
 import { FaRegStar } from "react-icons/fa";
 import { CiLogout } from "react-icons/ci";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <header>
@@ -23,12 +25,10 @@ export default function Header() {
       <div className="border-b border-gray-300">
         <div className="container mx-auto flex items-center justify-between px-4 md:px-8 lg:px-[8%] py-7">
           <div className="flex items-center space-x-2">
-            <img
-              src="/images/logo.png"
-              alt="Buyspeart"
-              className="h-8"
-            />
-            <span className="xl:text-2xl text-lg font-bold pr-3">Buyspeart</span>
+            <img src="/images/logo.png" alt="Buyspeart" className="h-8" />
+            <span className="xl:text-2xl text-lg font-bold pr-3">
+              Buyspeart
+            </span>
           </div>
 
           <button
@@ -58,22 +58,35 @@ export default function Header() {
             <a href="#" className="text-black hover:text-gray-700 text-md xl:text-2xl">
               Contact
             </a> */}
-             <Link to="/" className="text-black hover:text-gray-700 text-md xl:text-2xl">
+            <Link
+              to="/"
+              className="text-black hover:text-gray-700 text-md xl:text-2xl"
+            >
               Home
             </Link>
-            <Link to="/products" className="text-black hover:text-gray-700 text-md xl:text-2xl">
+            <Link
+              to="/products"
+              className="text-black hover:text-gray-700 text-md xl:text-2xl"
+            >
               Our Products
             </Link>
-            <Link to="/contact" className="text-black hover:text-gray-700 text-md xl:text-2xl">
+            <Link
+              to="/contact"
+              className="text-black hover:text-gray-700 text-md xl:text-2xl"
+            >
               Contact
             </Link>
             <div className="flex md:hidden justify-center gap-6 mt-4">
-              <GoHeart className="text-3xl cursor-pointer text-gray-700 hover:text-black" />
+              <button onClick={() => navigate("/wishlist")}>
+                <GoHeart className="text-3xl cursor-pointer text-gray-700 hover:text-black" />
+              </button>
               <div className="relative">
-                <IoCartOutline className="text-3xl cursor-pointer text-gray-700 hover:text-black" />
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1">
-                  2
-                </span>
+                <button onClick={() => navigate("/cart")}>
+                  <IoCartOutline className="text-2xl md:text-3xl cursor-pointer text-gray-700 hover:text-black" />
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1">
+                    2
+                  </span>
+                </button>
               </div>
               <div className="relative">
                 <div
@@ -84,19 +97,37 @@ export default function Header() {
                 </div>
                 {dropdownOpen && (
                   <div className="absolute right-0 mt-2 w-48 bg-black text-white shadow-lg rounded-md p-3 space-y-2">
-                    <Link to="/profile" className="flex items-center space-x-2 hover:text-gray-400">
-                      <TbUser className="text-2xl" /> <span>Manage My Account</span>
+                    <Link
+                      to="/profile"
+                      className="flex items-center space-x-2 hover:text-gray-400"
+                    >
+                      <TbUser className="text-2xl" />{" "}
+                      <span>Manage My Account</span>
                     </Link>
-                    <Link to="/orders" className="flex items-center space-x-2 hover:text-gray-400">
-                      <LuShoppingBag className="text-2xl" /> <span>My Order</span>
+                    <Link
+                      to="/orders"
+                      className="flex items-center space-x-2 hover:text-gray-400"
+                    >
+                      <LuShoppingBag className="text-2xl" />{" "}
+                      <span>My Order</span>
                     </Link>
-                    <Link to="/cancellations" className="flex items-center space-x-2 hover:text-gray-400">
-                      <MdOutlineCancel className="text-2xl" /> <span>My Cancellations</span>
+                    <Link
+                      to="/cancellations"
+                      className="flex items-center space-x-2 hover:text-gray-400"
+                    >
+                      <MdOutlineCancel className="text-2xl" />{" "}
+                      <span>My Cancellations</span>
                     </Link>
-                    <Link to="/reviews" className="flex items-center space-x-2 hover:text-gray-400">
+                    <Link
+                      to="/reviews"
+                      className="flex items-center space-x-2 hover:text-gray-400"
+                    >
                       <FaRegStar className="text-2xl" /> <span>My Reviews</span>
                     </Link>
-                    <Link to="/logout" className="flex items-center space-x-2 hover:text-gray-400">
+                    <Link
+                      to="/logout"
+                      className="flex items-center space-x-2 hover:text-gray-400"
+                    >
                       <CiLogout className="text-2xl" /> <span>Logout</span>
                     </Link>
                   </div>
@@ -114,12 +145,16 @@ export default function Header() {
               />
               <FaSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-700" />
             </div>
-            <GoHeart className="text-2xl md:text-3xl cursor-pointer text-gray-700 hover:text-black" />
+            <button onClick={() => navigate("/wishlist")}>
+                <GoHeart className="text-3xl cursor-pointer text-gray-700 hover:text-black" />
+              </button>
             <div className="relative">
-              <IoCartOutline className="text-2xl md:text-3xl cursor-pointer text-gray-700 hover:text-black" />
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1">
-                2
-              </span>
+              <button onClick={() => navigate("/cart")}>
+                <IoCartOutline className="text-2xl md:text-3xl cursor-pointer text-gray-700 hover:text-black" />
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1">
+                  2
+                </span>
+              </button>
             </div>
             <div className="relative">
               <div
@@ -129,22 +164,39 @@ export default function Header() {
                 <TbUser className="text-white text-2xl md:text-2xl" />
               </div>
               {dropdownOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-black text-white shadow-lg rounded-md p-3 space-y-2">
-                  <Link to="/profile" className="flex items-center space-x-2 hover:text-gray-400">
-                      <TbUser className="text-2xl" /> <span>Manage My Account</span>
-                    </Link>
-                    <Link to="/orders" className="flex items-center space-x-2 hover:text-gray-400">
-                      <LuShoppingBag className="text-2xl" /> <span>My Order</span>
-                    </Link>
-                    <Link to="/cancellations" className="flex items-center space-x-2 hover:text-gray-400">
-                      <MdOutlineCancel className="text-2xl" /> <span>My Cancellations</span>
-                    </Link>
-                    <Link to="/reviews" className="flex items-center space-x-2 hover:text-gray-400">
-                      <FaRegStar className="text-2xl" /> <span>My Reviews</span>
-                    </Link>
-                    <Link to="/logout" className="flex items-center space-x-2 hover:text-gray-400">
-                      <CiLogout className="text-2xl" /> <span>Logout</span>
-                    </Link>
+                <div className="absolute right-0 mt-2 w-48 bg-black text-white shadow-lg rounded-md p-3 space-y-2 z-10">
+                  <Link
+                    to="/profile"
+                    className="flex items-center space-x-2 hover:text-gray-400"
+                  >
+                    <TbUser className="text-2xl" />{" "}
+                    <span>Manage My Account</span>
+                  </Link>
+                  <Link
+                    to="/orders"
+                    className="flex items-center space-x-2 hover:text-gray-400"
+                  >
+                    <LuShoppingBag className="text-2xl" /> <span>My Order</span>
+                  </Link>
+                  <Link
+                    to="/cancellations"
+                    className="flex items-center space-x-2 hover:text-gray-400"
+                  >
+                    <MdOutlineCancel className="text-2xl" />{" "}
+                    <span>My Cancellations</span>
+                  </Link>
+                  <Link
+                    to="/reviews"
+                    className="flex items-center space-x-2 hover:text-gray-400"
+                  >
+                    <FaRegStar className="text-2xl" /> <span>My Reviews</span>
+                  </Link>
+                  <Link
+                    to="/logout"
+                    className="flex items-center space-x-2 hover:text-gray-400"
+                  >
+                    <CiLogout className="text-2xl" /> <span>Logout</span>
+                  </Link>
                 </div>
               )}
             </div>
